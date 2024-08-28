@@ -1,0 +1,140 @@
+
+{% extends "landing/base.html" %}
+
+{% block body %}
+<style>
+    section {
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+
+    img .w-full{
+      height: 200px;
+    }
+</style>
+
+<section>
+  <div class="container mx-auto px-20 my-20"> 
+      <div class="grid grid-cols-2 gap-4">
+          <div class="flex flex-col">
+              <div class="container mx-auto p-4">
+                  <div class="flex justify-center mb-4">
+                      <h1 class="text-3xl font-bold">Regístrate como Subcontratista</h1>
+                  </div>
+                  <div class="flex justify-center mb-4">
+                      <h2 class="text-2xl font-bold">Datos de representante</h2>
+                  </div>
+                  <div class="flex flex-wrap -mx-4 mb-4">
+                      <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
+                          <label class="block mb-2" for="apellidos">Apellidos</label>
+                          <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="apellidos" type="text">
+                          <label class="block mb-2" for="correo">Correo</label>
+                          <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="correo" type="email">
+                          <label class="block mb-2" for="dni">DNI</label>
+                          <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="dni" type="text">
+                      </div>
+                      <div class="w-full md:w-1/2 px-4">
+                          <label class="block mb-2" for="nombre">Nombre</label>
+                          <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="nombre" type="text">
+                          <label class="block mb-2" for="celular">Celular</label>
+                          <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="celular" type="tel">
+                          <label class="block mb-2" for="cargo">Cargo que ocupa</label>
+                          <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="cargo" type="text">
+                      </div>
+                  </div>
+                  <div class="flex justify-center mb-4">
+                      <h2 class="text-2xl font-bold">Datos de la empresa</h2>
+                  </div>
+                  <div class="flex flex-wrap -mx-4 mb-4">
+                    <div class="w-full px-4 mb-4 md:mb-0">
+                      <label class="block mb-2" for="nombre-comercial">Nombre comercial</label>
+                      <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="nombre-comercial" type="text">
+                      <label class="block mb-2" for="razon-social">Razon social</label>
+                      <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="razon-social" type="text">
+                      <label class="block mb-2" for="rubro-producto">RUC</label>
+                      <input class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="rubro-producto" type="text">
+                  </div>
+                  
+                  </div>
+                  <div class="flex flex-wrap -mx-4 mb-4">
+                    <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
+                      <form class="max-w-sm mx-auto">
+                        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+                        <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                          <option selected>Seleccione servicios que realiza</option>
+                          <option value="US">Instalación de Drywall</option>
+                          <option value="CA">Acabados de pintura</option>
+                          <option value="FR">Instalaicones eléctricas</option>
+                          <option value="DE">Acabados húmedos</option>
+                        </select>
+                      </form>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="">
+            <img src="https://www.comercturro.com/blog/documentos/ImagenesArticulos/principales/herramientas-alba%C3%B1il-imprescindibles.jpg" alt="">
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="flex justify-around">
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Paso 1</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+        </div>
+      </div>
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Paso 2</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+        </div>
+      </div>
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Paso 3</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+        </div>
+      </div>
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Paso 4</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

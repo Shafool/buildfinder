@@ -1,0 +1,93 @@
+
+{% extends "landing/base.html" %}
+
+{% block body %}
+  <!-- Fragmento -->
+  <section class="antialiased bg-gray-100 text-gray-600 min-h-screen p-4">
+    <div class="h-full">
+        <!-- Componente de pago -->
+        <div>
+            <!-- Fondo de la tarjeta -->
+            <div class="relative px-4 sm:px-6 lg:px-8 max-w-lg mx-auto">
+                <img class="rounded-t shadow-lg" src="https://preview.cruip.com/mosaic/images/pay-bg.jpg" width="460" height="180" alt="Fondo de pago" />
+            </div>
+            <!-- Cuerpo de la tarjeta -->
+            <div class="relative px-4 sm:px-6 lg:px-8 pb-8 max-w-lg mx-auto" x-data="{ card: true }">
+                <div class="bg-white px-8 pb-6 rounded-b shadow-lg">
+
+                    <!-- Encabezado de la tarjeta -->
+                    <div class="text-center mb-6">
+                        <div class="mb-2">
+                            <img class="-mt-8 inline-flex rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Toicon-icon-fandom-build.svg" width="64" height="64" alt="Usuario" />
+                        </div>
+                        <h1 class="text-xl leading-snug text-gray-800 font-semibold mb-2">Pasarela de pago</h1>
+                        <div class="text-sm">
+                            Realiza tu pago y desbloque las bases de esta convocatoria
+                        </div>
+                    </div>
+
+                    <!-- Alternar -->
+                    <div class="flex justify-center mb-6">
+                        <div class="relative flex w-full p-1 bg-gray-50 rounded">
+                            <span class="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
+                                <span class="absolute inset-0 w-1/2 bg-white rounded border border-gray-200 shadow-sm transform transition duration-150 ease-in-out" :class="card ? 'translate-x-0' : 'translate-x-full'"></span>
+                            </span>
+                            <button class="relative flex-1 text-sm font-medium p-1 transition duration-150 ease-in-out focus:outline-none focus-visible:ring-2" @click.prevent="card = true">Pagar con tarjeta</button>
+                            <button class="relative flex-1 text-sm font-medium p-1 transition duration-150 ease-in-out focus:outline-none focus-visible:ring-2" @click.prevent="card = false">Pagar con PayPal</button>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de tarjeta -->
+                    <div x-show="card">
+                        <div class="space-y-4">
+                            <!-- Número de tarjeta -->
+                            <div>
+                                <label class="block text-sm font-medium mb-1" for="card-nr">Número de tarjeta <span class="text-red-500">*</span></label>
+                                <input id="card-nr" class="text-sm text-gray-800 bg-white border rounded leading-5 py-2 px-3 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm placeholder-gray-400 focus:ring-0 w-full" type="text" placeholder="1234 1234 1234 1234" />
+                            </div>
+                            <!-- Fecha de vencimiento y CVC -->
+                            <div class="flex space-x-4">
+                                <div class="flex-1">
+                                    <label class="block text-sm font-medium mb-1" for="card-expiry">Fecha de vencimiento <span class="text-red-500">*</span></label>
+                                    <input id="card-expiry" class="text-sm text-gray-800 bg-white border rounded leading-5 py-2 px-3 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm placeholder-gray-400 focus:ring-0 w-full" type="text" placeholder="MM/AA" />
+                                </div>
+                                <div class="flex-1">
+                                    <label class="block text-sm font-medium mb-1" for="card-cvc">CVC <span class="text-red-500">*</span></label>
+                                    <input id="card-cvc" class="text-sm text-gray-800 bg-white border rounded leading-5 py-2 px-3 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm placeholder-gray-400 focus:ring-0 w-full" type="text" placeholder="CVC" />
+                                </div>
+                            </div>
+                            <!-- Nombre en la tarjeta -->
+                            <div>
+                                <label class="block text-sm font-medium mb-1" for="card-name">Nombre en la tarjeta <span class="text-red-500">*</span></label>
+                                <input id="card-name" class="text-sm text-gray-800 bg-white border rounded leading-5 py-2 px-3 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm placeholder-gray-400 focus:ring-0 w-full" type="text" placeholder="Juan Pérez" />
+                            </div>
+                            <!-- Correo electrónico -->
+                            <div>
+                                <label class="block text-sm font-medium mb-1" for="card-email">Correo electrónico <span class="text-red-500">*</span></label>
+                                <input id="card-email" class="text-sm text-gray-800 bg-white border rounded leading-5 py-2 px-3 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm placeholder-gray-400 focus:ring-0 w-full" type="email" placeholder="juan@empresa.com" />
+                            </div>
+                        </div>
+                        <!-- Pie del formulario -->
+                        <div class="mt-6">
+                            <div class="mb-4">
+                                <button class="font-medium text-sm inline-flex items-center justify-center px-3 py-2 border border-transparent rounded leading-5 shadow-sm transition duration-150 ease-in-out w-full bg-indigo-500 hover:bg-indigo-600 text-white focus:outline-none focus-visible:ring-2">Pagar $253.00</button>
+                            </div>
+                            <div class="text-xs text-gray-500 italic text-center">Se te cobrará $253, incluidos $48 de IVA en Italia</div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de PayPal -->
+                    <div x-show="!card" x-cloak>
+                        <div>
+                            <div class="mb-4">
+                                <button class="font-medium text-sm inline-flex items-center justify-center px-3 py-2 border border-transparent rounded leading-5 shadow-sm transition duration-150 ease-in-out w-full bg-indigo-500 hover:bg-indigo-600 text-white focus:outline-none focus-visible:ring-2">Pagar con PayPal - $253.00</button>
+                            </div>
+                            <div class="text-xs text-gray-500 italic text-center">Se te cobrará $253, incluidos $48 de IVA en Italia</div>
+                        </div>
+                   
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
