@@ -1,152 +1,417 @@
 
-{% extends "landing/base.html" %}
+{% extends "landing/base_landing.html" %}
+
+{% block style %}
+<style>
+  .t-card {
+    overflow: hidden;
+    width: 100%;
+    height: 470px;
+    border-radius: 10px;
+    
+    border: 2px solid rgb(255, 125, 49);
+    box-shadow: rgb(13, 16, 32, 0.45) 0px 25px 20px -20px;
+    transition: .3s;
+  }
+  .t-card:hover{
+    box-shadow: rgb(255, 125, 49, 0.45) 0px 25px 20px -20px;
+  }
+  .t-card:hover .t-card-title {
+    color: rgb(255, 125, 49);
+  }
+  .t-card:hover .t-card-par {
+    color: rgb(255, 125, 49);
+    opacity: 1;
+  }
+
+  .t-card-img-container {
+    background-size: cover;
+    overflow: hidden;
+    object-fit: contain ; 
+    height: 250px;
+  }
+
+  .t-card-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .t-card-title {
+    font-size: 16pt;
+    font-weight: 800;
+    margin-bottom: 16px;
+    transition: .3s;
+  }
+
+  .t-card-par {
+    font-size: 12pt;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .t-number {
+    font-size: 96pt;
+    line-height: 96pt;
+  }
+  .t-number-title {
+    font-size: 16pt;
+  }
+
+  .t-sponsor {
+    height: 180px;
+    object-fit: contain;
+  }
+  .t-sponsor img {
+    height: 100%;
+    /* width: 100%; */
+  }
+
+</style>
+{% endblock %}
 
 {% block body %}
-<style>
-    section {
-        margin-top: 120px;
-        margin-bottom: 120px;
-    }
-
-    img .w-full{
-      height: 200px;
-    }
-</style>
-
-<section>
-    <div class="container mx-auto px-20 my-20"> 
-        <div class="grid grid-cols-2 gap-4">
-            <div class="flex flex-col">
-                <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900">
-                    ¿Quiénes somos?
-                </h1>
-                <p class="mb-6 text-lg font-normal text-gray-500">
-                    Ullamco velit et laboris et in adipisicing minim voluptate eu anim anim qui excepteur. Do dolor commodo aliquip eiusmod deserunt Lorem excepteur aute labore eiusmod sunt eiusmod. Quis mollit cillum sint velit aliquip sint sit proident duis dolore officia do. Magna laborum incididunt do nulla ex occaecat nostrud minim fugiat et. Ullamco.
-                </p>
-            </div>
-            <div class="">
-                <img src="https://media.istockphoto.com/id/1350474131/photo/business-team-portrait.jpg?s=612x612&w=0&k=20&c=_rwVn8lkmzXc-_Q5tSyH-Jt0tt_acwxvXVYCckg8v0M=" alt="">
-            </div>
-        </div>
-    </div> 
-</section>
-
-<section>
-    <div class="container mx-auto px-20 my-20"> 
-        <div class="grid grid-cols-2 gap-4">
-            <div class="flex flex-col">
-                <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900">
-                    ¿Qué hacemos?
-                </h1>
-                <p class="mb-6 text-lg font-normal text-gray-500">
-                    Ullamco velit et laboris et in adipisicing minim voluptate eu anim anim qui excepteur. Do dolor commodo aliquip eiusmod deserunt Lorem excepteur aute labore eiusmod sunt eiusmod. Quis mollit cillum sint velit aliquip sint sit proident duis dolore officia do. Magna laborum incididunt do nulla ex occaecat nostrud minim fugiat et. Ullamco.
-                </p>
-            </div>
-            <div class="">
-                <img src="https://www.redhat.com/sysadmin/sites/default/files/styles/full/public/2021-06/magnifying-glass-search-find-blue.jpg?itok=GkvbT2Jk" alt="">
-            </div>
-        </div>
-    </div> 
-</section>
-
-<section>
-    <div class="container mx-auto px-20 my-20"> 
-        
-    </div> 
-</section>
-
-<section>
-    <div class="flex justify-around">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-          <img class="w-full" src="https://www.gyplac.com/siteassets/co/hombre-instalando-sistema-drywall.jpg?v=4a297b&width=1200&height=750&mode=Crop" alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2 text-center">Drywall</div>
-            <p class="text-gray-700 text-base text-center">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-          </div>
-        </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-          <img class="w-full" src="https://www.shutterstock.com/image-illustration/3d-illustration-concept-wide-background-600nw-2282758661.jpg" alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Acabados</div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-          </div>
-        </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-          <img class="w-full" src="https://revista-ps.costosperu.com/wp-content/uploads/2023/01/abridora-1.jpg" alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Acabados húmedos</div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-          </div>
-        </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-          <img class="w-full" src="https://i.ytimg.com/vi/OHju03Tvjzc/maxresdefault.jpg" alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Cimientos</div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-          </div>
+<!-- Quienes somos -->
+<section class="bg-primary-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="container-fluid">
+          <h2 class="t-titulo primary mb-4">
+            ¿Quiénes somos?
+          </h2>
+          <p class="t-par white opacity-75">
+            En PROCONNET, nos enorgullece presentarnos como una plataforma innovadora diseñada para ser el <b>aliado esencial de las empresas constructoras y subcontratistas</b>. Nuestro propósito es transformar la gestión de adquisiciones de servicios en la industria de la construcción.
+          </p>
+          <p class="t-par white opacity-75">
+            Comprendemos que la industria de la construcción enfrenta desafíos únicos y complejos. Por eso nuestra plataforma no solo permite a las empresas constructoras <b>localizar y comunicarse de manera sencilla con los proveedores de servicios que necesitan</b>, sino que también empodera a los subcontratistas, brindándoles visibilidad y oportunidades que los ayuden a crecer y prosperar.
+          </p>
+          <p class="t-par white opacity-75">  
+            Creemos firmemente que una colaboración genuina y productiva es la clave para el éxito en cada proyecto.
+          </p>
         </div>
       </div>
-</section>
-
-<section class="flex justify-center items-center">
-  <div class="container mx-auto px-20 my-20"> 
-    <div class="flex justify-between">
-      <div class="w-1/3 bg-gray-200 p-6 rounded-lg shadow-lg">
-        <div class="text-5xl font-semibold text-center">+20</div>
-        <div class="text-sm text-center">Empresas registradas</div>
-      </div>
-      <div class="w-1/3 bg-gray-200 p-6 rounded-lg shadow-lg mx-4">
-        <div class="text-5xl font-semibold text-center">+30</div>
-        <div class="text-sm text-center">Servicios</div>
-      </div>
-      <div class="w-1/3 bg-gray-200 p-6 rounded-lg shadow-lg">
-        <p class="text-5xl font-semibold text-center">+100</p>
-        <p class="text-sm text-center">Clientes satisfechos</p>
+      <div class="col-lg-6">
+        <div class="d-flex flex-row w-100 h-100">
+          <div class="ms-5 t-foto-container my-auto">
+            <img src="https://media.istockphoto.com/id/1350474131/photo/business-team-portrait.jpg?s=612x612&w=0&k=20&c=_rwVn8lkmzXc-_Q5tSyH-Jt0tt_acwxvXVYCckg8v0M=" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div> 
 </section>
 
-<section class="container mx-auto px-20 my-20">
-  <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900">
-    Empresas que confían en nosotros
-</h1>
-  <div class="flex justify-center">
-    <div class="flex items-center">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVRQQJw8ki4TueRZUiA9aCY2XSKB4qHsSG-YZxPsEN94VWIMrfqCZoF6rpRNAtT9wjhYg" alt="Logo Empresa 1" class="h-20 mx-4">
-      <img src="https://img.freepik.com/vector-premium/logo-empresa-constructora-que-diga-construccion_893986-119.jpg" alt="Logo Empresa 2" class="h-20 mx-4">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj37nuhy5c4TIkQSbtcOByFkMbtHoUGbyAMlCrRYrdHA&s" alt="Logo Empresa 3" class="h-20 mx-4">
-      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/construction-company-logo-realestate-company-design-template-cbabb56ff90f567111582056caf94176_screen.jpg?ts=1653241579" alt="Logo Empresa 4" class="h-20 mx-4">
+<!-- Visión -->
+<section class="bg-soft-white">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="container-fluid">
+          <h2 class="t-titulo primary mb-4">
+            Nuestra Visión
+          </h2>
+          <p class="t-par">
+            Aspiramos a construir un ecosistema donde la colaboración, la transparencia y la confianza sean los pilares fundamentales. En PROCONNET, estamos dedicados a empoderar a todas las partes involucradas para que tomen decisiones informadas y establezcan vínculos comerciales duraderos. <b>Nuestro objetivo es transformar la gestión de adquisiciones en la construcción</b> en un proceso accesible y eficiente, promoviendo un sentido de comunidad entre todas las empresas y proveedores.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="d-flex flex-row w-100 h-100">
+          <div class="ms-5 t-foto-container my-auto">
+            <img src="https://unsplash.com/photos/IESB4iFVuzA/download?force=true&w=640" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<!-- Compromiso -->
+<section>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="container-fluid">
+          <h2 class="t-titulo primary mb-4">
+            Nuestro compromiso
+          </h2>
+          <p class="t-par">
+            En PROCONNET, nuestro compromiso va más allá de ofrecer una plataforma; nos esforzamos por brindar una experiencia de usuario excepcional. Equipamos a nuestros usuarios con herramientas y recursos que optimizan <b>la búsqueda, evaluación y contratación de servicios</b>. Queremos ser un apoyo constante para el crecimiento y éxito de cada actor en el proceso de construcción, trabajando juntos para crear un entorno más ágil, confiable y humano.
+          </p>
+          <p class="t-par">
+            Te invitamos a unirte a PROCONNET y descubrir una nueva forma de conectar, colaborar y formar parte del futuro de la industria de la construcción. Juntos, podemos lograr un sector más dinámico y eficiente, donde cada relación contribuya al éxito colectivo.
+          </p>
+          <p class="t-par">
+            <b>¡Construyamos el futuro juntos!</b>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="d-flex flex-row w-100 h-100">
+          <div class="ms-5 t-foto-container my-auto">
+            <img src="https://unsplash.com/photos/ZYUcxbMeaIY/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTl8fGNpdmlsJTIwZW5naW5lZXJpbmd8ZXN8MHx8fHwxNzI1MDQzNzYwfDI&force=true&w=1920" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<!-- Servicios -->
+<section>
+  <div class="container">
+    <div class="container-fluid">
+      <h2 class="t-titulo primary mb-4">
+        Servicios
+      </h2>
+      <p class="t-par">
+        En PROCONNET, nuestro compromiso va más allá de ofrecer una plataforma; nos esforzamos por brindar una experiencia de usuario excepcional. Equipamos a nuestros usuarios con herramientas y recursos que optimizan <b>la búsqueda, evaluación y contratación de servicios</b>. Queremos ser un apoyo constante para el crecimiento y éxito de cada actor en el proceso de construcción, trabajando juntos para crear un entorno más ágil, confiable y humano.
+      </p>
+    </div>
+  </div>
+  <div class="py-3"></div>
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+
+        <li class="glide__slide">
+          <div style="height: 500px;">
+            <div class="t-card bg-primary-dark t-card-hover" style="width: 100%;">
+              <div class="t-card-img-container" style="background-image: url('https://www.gyplac.com/siteassets/co/hombre-instalando-sistema-drywall.jpg?v=4a297b&width=1200&height=750&mode=Crop');">
+              </div>
+              <div class="p-4">
+                <div class="t-card-title white">Drywall</div>
+                <p class="t-card-par white opacity-75">
+                  Instalación de drywall de manera rápida y eficiente para crear divisiones interiores. Garantizamos una instalación precisa, ideal para proyectos residenciales, comerciales e industriales.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li class="glide__slide">
+          <div style="height: 500px;">
+            <div class="t-card bg-primary-dark" style="width: 100%;">
+              <div class="t-card-img-container" style="background-image: url('https://www.shutterstock.com/image-illustration/3d-illustration-concept-wide-background-600nw-2282758661.jpg');">
+              </div>
+              <div class="p-4">
+                <div class="t-card-title white">Acabados secos</div>
+                <p class="t-card-par white opacity-75">
+                  Proveemos acabados secos como pisos y molduras, combinando funcionalidad y estética. Utilizamos materiales modernos para un resultado limpio y duradero.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="glide__slide">
+          <div style="height: 500px;">
+            <div class="t-card bg-primary-dark" style="width: 100%;">
+              <div class="t-card-img-container" style="background-image: url('https://revista-ps.costosperu.com/wp-content/uploads/2023/01/abridora-1.jpg');">
+              </div>
+              <div class="p-4">
+                <div class="t-card-title white">Acabados húmedos</div>
+                <p class="t-card-par white opacity-75">
+                  Ofrecemos acabados de alta calidad para áreas expuestas a la humedad, como baños y cocinas. Utilizamos materiales duraderos que garantizan resistencia y estética, logrando un acabado uniforme y profesional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="glide__slide">
+          <div style="height: 500px;">
+            <div class="t-card bg-primary-dark" style="width: 100%;">
+              <div class="t-card-img-container" style="background-image: url('https://i.ytimg.com/vi/OHju03Tvjzc/maxresdefault.jpg');">
+              </div>
+              <div class="p-4">
+                <div class="t-card-title white">Cimientos</div>
+                <p class="t-card-par white opacity-75">
+                  Ofrecemos acabados de alta calidad para áreas expuestas a la humedad, como baños y cocinas. Utilizamos materiales duraderos que garantizan resistencia y estética, logrando un acabado uniforme y profesional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
+
+<!-- Nuestro impacto -->
+<section class="bg-primary-dark">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="container-fluid">
+          <h2 class="t-titulo primary mb-4">
+            Nuestro impacto
+          </h2>
+          <p class="t-par white opacity-75">
+          Al unir a las empresas constructoras con subcontratistas de manera eficiente, en PROCONNET aspiramos a transformar la industria de la construcción, haciéndola más accesible, ágil y colaborativa. Creemos que el éxito de cada proyecto se logra a través de la colaboración genuina, y estamos aquí para ser ese aliado esencial que potencia el crecimiento y el éxito de todos los actores en este espacio.
+          </p>
+          <p class="t-par white opacity-75">
+          Te invitamos a unirte a PROCONNET y ser parte de esta transformación en la industria de la construcción.
+          </p>
+          <p class="t-par white opacity-75">
+          ¡Construyamos el futuro juntos!
+          </p>  
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="d-flex flex-row w-100 h-100">
+          <div class="ms-5 t-foto-container my-auto">
+            <img src="https://unsplash.com/photos/jeUNhuL5hBQ/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8Y2l0eSUyMGN1c2NvfGVzfDB8fHx8MTcyNTA1MzAwOHww&force=true&w=1920" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Números -->
+    <div class="py-5"></div>
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="container-fluid animate__animated anim-in">
+          <p class="t-number primary text-center">
+            103
+          </p>
+          <h2 class="t-number-title primary text-center">
+            Subcontratistas registrados
+          </h2>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="container-fluid animate__animated anim-in">
+          <p class="t-number primary text-center">
+            541
+          </p>
+          <h2 class="t-number-title primary text-center">
+            Contratistas confían en nosotros
+          </h2>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="container-fluid animate__animated anim-in">
+          <p class="t-number primary text-center">
+            2
+          </p>
+          <h2 class="t-number-title primary text-center">
+            Años de experiencia
+          </h2>
+        </div>
+      </div>
+
+    </div>
+  </div> 
+</section>
+
+<!-- Empresas en que confían -->
+<section>
+  <div class="container">
+    <div class="container-fluid">
+      <h2 class="t-titulo primary mb-4">
+        Empresas que confían en nosotros
+      </h2>
+    </div>
+  </div>
+  <div class="py-4"></div>
+  <div class="glide-sponsors">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+
+
+        <li class="glide__slide">
+          <div class="t-sponsor">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVRQQJw8ki4TueRZUiA9aCY2XSKB4qHsSG-YZxPsEN94VWIMrfqCZoF6rpRNAtT9wjhYg" alt="Logo Empresa 1" class="h-20 mx-4">
+          </div>
+        </li>
+
+        <li class="glide__slide">
+          <div class="t-sponsor">
+            <img src="https://img.freepik.com/vector-premium/logo-empresa-constructora-que-diga-construccion_893986-119.jpg" alt="Logo Empresa 2" class="h-20 mx-4">
+          </div>
+        </li>
+
+        <li class="glide__slide">
+          <div class="t-sponsor">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj37nuhy5c4TIkQSbtcOByFkMbtHoUGbyAMlCrRYrdHA&s" alt="Logo Empresa 3" class="h-20 mx-4">
+          </div>
+        </li>
+
+        <li class="glide__slide">
+          <div class="t-sponsor">
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/construction-company-logo-realestate-company-design-template-cbabb56ff90f567111582056caf94176_screen.jpg?ts=1653241579" alt="Logo Empresa 4" class="h-20 mx-4">
+          </div>
+        </li>
+
+
+      </div>
+  </div>
+</section>
+
+<!-- Glide JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  // Slider de servicios
+  let carrusel = new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 3,
+    gap: 30,
+    // focusAt: 'center',
+    peek: { before: 100, after: 100 },
+    autoplay: 3000,
+    breakpoints: {
+      800: { perView: 1 },
+      1200: { perView: 2 },
+    }
+  });
+  carrusel.mount();
+
+  // Slider de sponsors
+  let carruselSponsors = new Glide('.glide-sponsors', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 5,
+    gap: 30,
+    peek: { before: 100, after: 100 },
+    autoplay: 3000,
+    breakpoints: {
+      800: { perView: 1 },
+      1200: { perView: 2 },
+    }
+  });
+  carruselSponsors.mount();
+</script>
+
+<script>
+const animElements = document.getElementsByClassName('anim-in');
+console.log(animElements);
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate__fadeInRight');
+      observer.unobserve(entry.target);  // Stop observing once animation is triggered
+    }
+  });
+});
+
+// Start observing each element individually
+let delay = 0
+let delayIncrement = 0.5
+for (let element of animElements) {
+  // element.style["--animate-delay"] = `${delay}s`;
+  // delay += delayIncrement;
+  observer.observe(element);
+}
+  
+</script>
 
 {% endblock %}
