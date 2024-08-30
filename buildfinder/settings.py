@@ -26,7 +26,8 @@ SECRET_KEY = "django-insecure-3+1@z6dws3n7^w9dd50w-#3lc&#uf@^(1mk+6sz%s)2sc0f8m3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://https://fearless-dream-production.up.railway.app']
 
 
 # Application definition
