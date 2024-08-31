@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://fearless-dream-production.up.railway.app']
 
+ENVIRONMENT='production'
 
 # Application definition
 
